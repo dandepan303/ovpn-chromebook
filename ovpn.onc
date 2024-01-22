@@ -14,7 +14,7 @@
       "Type": "VPN",
       "VPN": {
         "Type": "OpenVPN",
-        "Host": "<preferred server - e.g. pool-1.prd.us.ovpn.com>",
+        "Host": "pool-1.prd.us.ovpn.com",
         "OpenVPN": {
           "ServerCARef": "09785866-70dc-4822-92d3-474cba566c0f",
           "ClientCertType": "Pattern",
