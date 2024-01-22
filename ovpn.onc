@@ -1,0 +1,43 @@
+{
+  "Type": "UnencryptedConfiguration",
+  "Certificates": [
+    {
+      "GUID": "09785866-70dc-4822-92d3-474cba566c0f",
+      "Type": "Authority",
+      "X509": "<server ca cert>"
+    }
+  ],
+  "NetworkConfigurations": [
+    {
+      "GUID": "d6ee502c-fa53-49dd-8e12-5780cfd066ae",
+      "Name": "OVPN",
+      "Type": "VPN",
+      "VPN": {
+        "Type": "OpenVPN",
+        "Host": "<preferred server - e.g. pool-1.prd.us.ovpn.com>",
+        "OpenVPN": {
+          "ServerCARef": "09785866-70dc-4822-92d3-474cba566c0f",
+          "ClientCertType": "Pattern",
+          "ClientCertPattern": {
+             "IssuerCARef": [
+               "{<uuid #1>}"
+             ]
+          },
+          "AuthRetry": "interact",
+          "CompLZO": "true",
+          "Port": 1194,
+          "Proto": "udp",
+          "RemoteCertTLS": "server",
+          "RemoteCertEKU": "TLS Web Server Authentication",
+          "KeyDirection": "1",
+          "TLSAuthContents": "<client key>",
+          "SaveCredentials": true,
+          "ServerPollTimeout": 10,
+          "UserAuthenticationType": "Password",
+          "Username": "<username>",
+          "Password": "<password>"
+        }
+      }
+    }
+  ]
+}
